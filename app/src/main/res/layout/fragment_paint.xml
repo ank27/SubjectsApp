@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_light"
+    tools:context=".MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/top_view"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/save_drawing"
+            android:layout_alignParentRight="true"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_shape_fill"
+            style="@style/TextViewAppearanceMediumBold"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <com.subjectappl.Utils.DrawingView
+        android:id="@+id/drawing_view"
+        android:layout_below="@+id/top_view"
+        android:layout_width="wrap_content"
+        android:background="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        />
+
+</RelativeLayout>

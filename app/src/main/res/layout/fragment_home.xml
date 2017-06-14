@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorbackground">
+    <RelativeLayout
+        android:id="@+id/subject_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/subject_container"
+            android:layout_width="match_parent"
+            android:background="@color/colorbackground"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/no_subject_layout"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/no_subject_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Subject Found"
+            android:textAlignment="center"
+            style="@style/TextViewAppearanceMediumBold"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+</RelativeLayout>

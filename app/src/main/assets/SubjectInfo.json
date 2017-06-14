@@ -1,0 +1,26 @@
+[
+  {
+    "SubjectId" :0,
+    "SubjectName": "English",
+    "SubjectImage": "https://i.ytimg.com/vi/eWuqZvqrY_4/maxresdefault.jpg",
+    "SubjectDesc": "Upto 30% Off on all products"
+  },
+  {
+    "SubjectId" :1,
+    "SubjectName": "Maths",
+    "SubjectImage": "https://strikebuys.com/wp-content/uploads/Mobikwik-logo.jpg",
+    "SubjectDesc": "Flat 50% off with wallet payment"
+  },
+  {
+    "SubjectId" :2,
+    "SubjectName": "Physics",
+    "SubjectImage": "https://assets.entrepreneur.com/content/3x2/1300/20160418121933-amazon.jpeg",
+    "SubjectDesc": "Deal of the Day: Upto 85% Off on Deals Every Hour"
+  },
+  {
+    "SubjectId" :3,
+    "SubjectName": "Music &amp; The Arts",
+    "SubjectImage": "http://www.shopickr.com/wp-content/uploads/2015/06/dominos-pizza-order-coupon-bogo-friday-offer-free-pizza-9-2-2015-big.jpg",
+    "SubjectDesc": "Buy 1 Get 1 Free on Regular Pizza"
+  }
+]
