@@ -29,7 +29,7 @@
             android:scaleType="centerCrop" />
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="67dp"
+            android:layout_height="87dp"
             android:layout_marginLeft="20dp"
             android:orientation="vertical"
             android:layout_weight="0.88">
@@ -44,9 +44,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                style="@style/TextViewAppearanceMediumBold"
-                android:maxLines="2"
-                android:lines="2"
+                style="@style/TextViewAppearanceBlack"
+                android:textSize="12sp"
+                android:maxLines="3"
+                android:lines="3"
                 android:layout_below="@+id/subject_title"
                 android:text="Loreal Paris"/>
         </RelativeLayout>
