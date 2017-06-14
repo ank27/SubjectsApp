@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -26,6 +27,7 @@ import com.subjectappl.R;
 import com.subjectappl.Utils.MarshMallowPermission;
 import com.subjectappl.Utils.Toaster;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import io.realm.Realm;
@@ -54,6 +56,7 @@ public class CreateSubjectFragment extends Fragment implements View.OnClickListe
         subject_image=(ImageView) rootView.findViewById(R.id.subject_image);
         btn_save=(Button) rootView.findViewById(R.id.btn_save);
         btn_save.setOnClickListener(this);
+        subject_image.setImageBitmap(BitmapFactory.decodeResource(getActivity().getResources(), R.drawable.ic_photo));
         final MarshMallowPermission marshMallowPermission=new MarshMallowPermission(getActivity());
         add_image_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,7 +112,13 @@ public class CreateSubjectFragment extends Fragment implements View.OnClickListe
                     realm=Realm.getDefaultInstance();
                     int count = realm.where(Subject.class).findAll().size();
                     Log.d(TAG,"count="+count);
-                    Subject subject=new Subject(count,subject_title,subject_description,"");
+
+                    Bitmap bmp=((BitmapDrawable)subject_image.getDrawable()).getBitmap();
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                    byte[] byteArray = stream.toByteArray();
+
+                    Subject subject=new Subject(count,subject_title,subject_description,byteArray);
                     realm.beginTransaction();
                     realm.copyToRealmOrUpdate(subject);
                     realm.commitTransaction();

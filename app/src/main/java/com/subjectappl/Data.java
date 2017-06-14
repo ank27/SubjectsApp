@@ -2,6 +2,8 @@ package com.subjectappl;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
@@ -12,6 +14,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -65,7 +68,12 @@ public class Data {
                 String subject_image = subjectJson.getString("SubjectImage");
                 String subject_desc = subjectJson.getString("SubjectDesc");
 
-                subject = new Subject(id,subject_name,subject_desc,subject_image);
+                Bitmap icon = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_photo);
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                icon.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
+
+                subject = new Subject(id,subject_name,subject_desc,byteArray);
                 subjectArrayList.add(subject);
             }
             SubjectApplication.data.subject_list= subjectArrayList;
